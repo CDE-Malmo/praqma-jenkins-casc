@@ -1,17 +1,10 @@
 jenkins:
-  systemMessage: "\n\nDemo setup for Jenkins Configuration as Code plugin......\n\n"
+  systemMessage: "Practice setup for Jenkins+Gerrit+Repo\n\n"
 
   numExecutors: 1
   mode: NORMAL
   scmCheckoutRetryCount: 3
   labelString: "master-label"  
-
-  securityRealm:
-    local:
-      allowsSignup: false
-      users:
-       - id: admin
-         password: ${adminpw:-passw0rd}
 
   authorizationStrategy:
     globalMatrix:
@@ -25,22 +18,5 @@ jenkins:
 
   remotingSecurity:
     enabled: true    
-
-credentials:
-  system:
-    domainCredentials:
-      - credentials:
-        - usernamePassword:
-            scope:    GLOBAL
-            id:       github-user
-            username: ewelina
-            password: ${github:-githubPassw0rd}
-            description: github username/password  
-
-tool:
-  git:
-    installations:
-      - name: Default
-        home: "git"
 
 
