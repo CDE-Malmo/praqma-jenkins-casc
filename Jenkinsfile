@@ -6,9 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                dir(env.CASC_REPO) {
-                    checkout scm
-                }
+                sh 'echo "Yo!"'
             }
         }
     }
